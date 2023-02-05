@@ -41,4 +41,10 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    // connect with detail_users table
+    public function detailUser()
+    {
+        return $this->hasMany(DetailUser::class);
+    }
 }
