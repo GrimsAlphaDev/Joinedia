@@ -53,13 +53,13 @@
                 <img src="assets/image/Logo Joinedia Mix.png" alt="" class="mx-auto w-3/4">
             </div>
             <div class="w-full">
-                <button class="bg-cyan-500 rounded-lg px-32 py-2 text-xl">Join Now</button>
+                <a href="{{ route('register') }}" class="bg-cyan-500 rounded-lg px-32 py-2 text-xl font-bold">Join Now</a>
             </div>
         </div>
         {{-- Feature --}}
         <div class="container-fluid p-10 space-y-5 h-full bg-slate-500">
-            <p class="font-bold text-3xl text-center">Our Feature</p>
-            <div class="grid grid-cols-3 place-items-center w-1/2 mx-auto">
+            <p class="font-bold text-3xl text-center text-white">Our Feature</p>
+            <div class="grid grid-cols-3 space-x-10 place-items-center w-3/5 mx-auto">
                 {{-- Card --}}
                 <div class="max-w-sm rounded-lg overflow-hidden shadow-lg w-52 h-96 bg-white outline-black border-2">
                     <div class="px-6 py-4 h-full grid place-content-center">
