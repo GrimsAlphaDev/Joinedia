@@ -26,6 +26,8 @@ return new class extends Migration
             $table->string('nama');
             $table->string('alamat');
             $table->string('no_hp')->unique();
+            $table->string('dosen_prodi')->nullable();
+            $table->string('nama_himauk')->nullable();
             $table->timestamps();
         });
     }
