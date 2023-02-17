@@ -6,7 +6,7 @@
     </x-slot>
 
     <main>
-        <div class="container mx-auto mt-20">
+        <div class="container mx-auto pt-20">
             <div class="w-2/3 mx-auto rounded-sm bg-white p-10">
                 <form method="POST" action="{{ route('addevent.store') }}" enctype="multipart/form-data">
                     @csrf

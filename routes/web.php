@@ -23,11 +23,17 @@ Route::get('/', function () {
     return view('landing-page');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified','profile'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified','profile'])->name('dashboard');
 
-Route::middleware(['auth', 'verified','profile'])->group(function () {
+Route::middleware(['auth', 'verified', 'profile'])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+    Route::get('/event', function () {
+        return view('eventPage.eventPage');
+    })->name('event');
     Route::get('/addevent', [EventController::class, 'create'])->name('addevent.index');
     Route::post('/addevent', [EventController::class, 'store'])->name('addevent.store');
 });
@@ -40,4 +46,4 @@ Route::middleware('auth')->group(function () {
     Route::post('/profile/post', [ProfileController::class, 'store'])->name('profile.store');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
