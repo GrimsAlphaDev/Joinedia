@@ -24,8 +24,10 @@ return new class extends Migration
             $table->string('image');
             $table->string('tempat');
             $table->string('kategori');
-            $table->string('tanggal');
-            $table->integer('quota');
+            $table->string('tanggal_mulai');
+            $table->string('tanggal_selesai');
+            $table->boolean('open_volunteer');
+            $table->integer('quota')->nullable();
             $table->string('status');
             $table->timestamps();
         });

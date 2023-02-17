@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Event;
+use App\Models\DetailUser;
+use App\Models\University;
 use App\Http\Requests\StoreEventRequest;
 use App\Http\Requests\UpdateEventRequest;
 
@@ -25,7 +27,7 @@ class EventController extends Controller
      */
     public function create()
     {
-        //
+        return view('addEvent.index');
     }
 
     /**
@@ -36,7 +38,54 @@ class EventController extends Controller
      */
     public function store(StoreEventRequest $request)
     {
-        //
+        // return $request;
+
+        // get user id
+        $user_id = auth()->user()->id;
+        // search detail user id
+        $detail_user = DetailUser::where('user_id', $user_id)->first();
+        $detail_user_id = $detail_user->id;
+        $detail_user_university = $detail_user->university_id;
+
+        if (isset($request->volunteer)) {
+            if ($request->volunteer == 1) {
+                $volunteer = true;
+            } else {
+                $volunteer = false;
+            }
+        } else {
+            $volunteer = false;
+        }
+        
+        // return $request->file('gambar');
+
+        // store image to public/assets/image
+        $image = $request->file('gambar');
+        $image_name = time() . '.' . $image->getClientOriginalExtension();
+        $image->move(public_path('assets/image'), $image_name);
+
+        
+        $event = new Event();
+        $event->detail_user_id = $detail_user_id;
+        $event->university_id = $detail_user_university;
+        $event->nama_event = $request->nama_event;
+        $event->deskripsi = $request->deskripsi_event;
+        $event->image = $image_name;
+        $event->tempat = $request->tempat;
+        $event->kategori = $request->kategori;
+        $event->tanggal_mulai = $request->tanggal_mulai;
+        $event->tanggal_selesai = $request->tanggal_selesai;
+        $event->open_volunteer = $volunteer;
+        $event->quota = $request->quota;
+        $event->status = "Active";
+        $event->save();
+
+        if ($event) {
+            return redirect()->route('dashboard')->with('success', 'Event berhasil ditambahkan');
+        } else {
+            return redirect()->route('dashboard')->with('error', 'Event gagal ditambahkan');
+        }
+
     }
 
     /**

@@ -8,17 +8,18 @@
     <main>
         <div class="container mx-auto mt-20">
             <div class="w-2/3 mx-auto rounded-sm bg-white p-10">
-                <form>
+                <form method="POST" action="{{ route('addevent.store') }}" enctype="multipart/form-data">
+                    @csrf
                     <div class="mb-2">
                         <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                             Nama Event</label>
-                        <input type="text" placeholder="Masukkan Nama Event" id="small-input"
+                        <input type="text" placeholder="Masukkan Nama Event" id="small-input" name="nama_event"
                             class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                     </div>
                     <div class="mb-2">
                         <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                             Deskripsi event</label>
-                        <textarea id="message" rows="4"
+                        <textarea id="message" rows="4" name="deskripsi_event"
                             class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             placeholder="Tulis Deskripsi Event Kamu"></textarea>
                     </div>
@@ -28,20 +29,42 @@
                         <div class="flex items-center w-full">
                             <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                                 Dari</label>
-                            <input type="text" placeholder="Masukkan Nama Event" id="small-input"
+                            <input type="date" placeholder="Masukkan Tanggal Mulai Event" id="small-input" name="tanggal_mulai" 
                                 class="block w-full mx-2 p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                         </div>
                         <div class="flex items-center w-full">
-                            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                            <label for="date" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                                 Sampai</label>
-                            <input type="text" placeholder="Masukkan Nama Event" id="small-input"
+                            <input type="date" placeholder="Masukkan Tanggal Selesai" id="small-input" name="tanggal_selesai"
+                                class="block w-full mx-2 p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                        </div>
+                    </div>
+                    <div class="flex justify-between items-center mb-2">
+                        <div class="flex items-center w-full">
+                            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                                Kategori</label>
+                            <select name="kategori" id="kategori" class="block w-full mx-2 p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                <option value="akademik">Akademik</option>
+                                <option value="nonakademik">Non Akademik</option>
+                            </select>
+                        </div>
+                        <div class="flex items-center w-full">
+                            <label for="date" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                                Kuota</label>
+                            <input type="number" placeholder="Masukkan Quota" id="small-input" name="quota"
                                 class="block w-full mx-2 p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                         </div>
                     </div>
                     <div class="mb-2">
+                        <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                            Lokasi Event</label>
+                        <input type="text" placeholder="Masukkan Nama Event" id="small-input" name="tempat"
+                            class="block w-full p-2 text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                    </div>
+                    <div class="mb-2">
                         <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Poster /
                             Gambar</label>
-                        <input type="file" placeholder="Masukkan Nama Event" id="small-input"
+                        <input type="file" placeholder="Masukkan Nama Event" id="small-input" name="gambar"
                             class="cursor-pointer block w-full text-gray-900 border border-gray-300 rounded-lg bg-gray-50 sm:text-xs focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             aria-describedby="user_avatar_help" id="user_avatar">
                     </div>
@@ -49,7 +72,7 @@
                         <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Open
                             Volunteer</label>
                         <label class="mx-2 relative inline-flex items-center cursor-pointer">
-                            <input type="checkbox" value="" class="sr-only peer">
+                            <input type="checkbox" value="1" name="volunteer" class="sr-only peer">
                             <div
                                 class="w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600">
                             </div>

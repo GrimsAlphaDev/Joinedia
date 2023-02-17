@@ -1,3 +1,11 @@
+@php
+    // import event model
+    use App\Models\Event;
+    // get all events
+    $events = Event::all();
+
+@endphp
+
 <!doctype html>
 <html lang="en">
 
@@ -8,6 +16,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
+
+{{-- @dd($events[0]) --}}
+
+{{-- image display --}}
+@foreach ($events as $event)
+<img src="{{ url('assets/image/' . $event->image) }}" alt="" style="width: 400px;">
+@endforeach
+
 
 <body>
     <h1>Hello, world!</h1>

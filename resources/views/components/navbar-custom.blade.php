@@ -1,6 +1,6 @@
 <div class="w-full">
     <!-- Happiness is not something readymade. It comes from your own actions. - Dalai Lama -->
-    <div class="flex fixed justify-between px-5 py-1 items-center outline-1 outline-black border-2 w-full bg-white">
+    <div class="flex justify-between px-5 py-1 items-center outline-1 outline-black border-2 w-full bg-white">
         {{-- Logo Brand --}}
         <div class="text-start">
             <a href="{{ url('/dashboard') }}">

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\EventController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/test', function () {
+    return view('test');
+});
+
 Route::get('/', function () {
     return view('landing-page');
 });
@@ -22,9 +27,10 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified','profile'])->name('dashboard');
 
-Route::get('/addevent', function(){
-    return view('addEvent.index');
-})->middleware('profile');
+Route::middleware(['auth', 'verified','profile'])->group(function () {
+    Route::get('/addevent', [EventController::class, 'create'])->name('addevent.index');
+    Route::post('/addevent', [EventController::class, 'store'])->name('addevent.store');
+});
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
