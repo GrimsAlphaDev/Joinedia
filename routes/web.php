@@ -22,8 +22,8 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified','profile'])->name('dashboard');
 
-Route::get('/test', function(){
-    return view('test');
+Route::get('/addevent', function(){
+    return view('addEvent.index');
 })->middleware('profile');
 
 Route::middleware('auth')->group(function () {

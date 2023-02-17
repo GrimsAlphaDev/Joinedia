@@ -1,48 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Joinedia</title>
-    @vite('resources/css/app.css')
-</head>
-
-<body>
+<x-app-layout>
+    {{-- Navbar --}}
     <div class="container-fluid">
-        {{-- Navbar --}}
-        <div class="grid grid-cols-3 px-5 py-1 items-center outline-1 outline-black border-2 fixed w-full bg-white">
-            {{-- Logo Brand --}}
-            <div class="text-start">
-                <a href="{{ url('/dashboard') }}">
-                    <img src="assets/image/Logo Joinedia Mix.png" alt="" class="w-36">
-                </a>
-            </div>
-            {{-- Nav link --}}
-            <div class="text-center grid grid-cols-4 font-bold">
-                <p><a href="">Home</a></p>
-                <p><a href="">Event</a></p>
-                <p><a href="">Forum</a></p>
-                <p><a href="">Promotion</a></p>
-            </div>
-            {{-- Button Sign Up/Login --}}
-            <div class="text-end">
-                @if (Route::has('login'))
-                    @auth
-                    @else
-                        <a href="{{ route('login') }}"
-                            class="btn btn-primary bg-cyan-600 text-white pt-2 pb-2 pl-4 pr-4 rounded-lg">Log in</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}"
-                                class="btn btn-primary bg-cyan-600 text-white pt-2 pb-2 pl-4 pr-4 rounded-lg">Register</a>
-                        @endif
-                    @endauth
-                @endif
-            </div>
-        </div>
-
+        <x-navbar-custom></x-navbar-custom>
         {{-- Big Hero --}}
         <div class="container-fluid bg-white p-10 space-y-40 pt-32">
             <div class="grid grid-cols-2 items-center space-x-20">
@@ -52,9 +11,21 @@
                 </p>
                 <img src="assets/image/Logo Joinedia Mix.png" alt="" class="mx-auto w-3/4">
             </div>
-            <div class="w-full">
-                <a href="{{ route('register') }}" class="bg-cyan-500 rounded-lg px-32 py-2 text-xl font-bold">Join Now</a>
-            </div>
+            @if (Route::has('login'))
+                @auth
+                    <div class="w-full">
+                        <a href="{{ route('dashboard') }}" class="bg-cyan-500 rounded-lg px-32 py-2 text-xl font-bold">Kembali
+                            Ke Dashboard</a>
+                    </div>
+                @else
+                    @if (Route::has('register'))
+                        <div class="w-full">
+                            <a href="{{ route('register') }}"
+                                class="bg-cyan-500 rounded-lg px-32 py-2 text-xl font-bold">Join Now</a>
+                        </div>
+                    @endif
+                @endauth
+            @endif
         </div>
         {{-- Feature --}}
         <div class="container-fluid p-10 space-y-5 h-full bg-slate-500">
@@ -187,7 +158,8 @@
                 <div class="grid place-content-between w-full space-y-10">
                     <div class="space-y-2">
                         <img src="assets/image/Logo Joinedia B&W.png" class="w-1/4" alt="">
-                        <p class="w-full">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus labore facere recusandae eum
+                        <p class="w-full">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus labore facere
+                            recusandae eum
                             nesciunt soluta illo nobis et necessitatibus voluptatem.</p>
                     </div>
                     <p>© 2023 JOINEDIA. All Rights Reserved.</p>
@@ -217,11 +189,9 @@
                         <p class="hover:text-blue-600"><a href="">Forum</a></p>
                         <p class="hover:text-blue-600"><a href="">Support</a></p>
                     </div>
-                    
+
                 </div>
             </div>
         </div>
     </div>
-</body>
-
-</html>
+</x-app-layout>

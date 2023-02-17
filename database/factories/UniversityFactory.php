@@ -17,7 +17,6 @@ class UniversityFactory extends Factory
     public function definition()
     {
         return [
-            //
         ];
     }
 }
