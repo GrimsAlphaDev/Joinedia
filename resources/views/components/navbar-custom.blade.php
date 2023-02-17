@@ -1,4 +1,4 @@
-<nav-x class="fixed w-full">
+<nav-x class="w-full">
     <!-- Happiness is not something readymade. It comes from your own actions. - Dalai Lama -->
     <div class="flex justify-between px-5 py-1 items-center outline-1 outline-black border-2 w-full bg-white">
         {{-- Logo Brand --}}

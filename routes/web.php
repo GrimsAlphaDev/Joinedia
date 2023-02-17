@@ -1,8 +1,9 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\ProfileController;
-use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,13 +24,12 @@ Route::get('/', function () {
     return view('landing-page');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified','profile'])->name('dashboard');
 
-Route::middleware(['auth', 'verified','profile'])->group(function () {
+Route::middleware(['auth', 'verified', 'profile'])->group(function () {
     Route::get('/addevent', [EventController::class, 'create'])->name('addevent.index');
     Route::post('/addevent', [EventController::class, 'store'])->name('addevent.store');
+    Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');
+    Route::get('/dashboard/select/{id}',[DashboardController::class,'selectedEventDashboard'])->name('selected.event.dashboard');
 });
 
 Route::middleware('auth')->group(function () {
@@ -40,4 +40,4 @@ Route::middleware('auth')->group(function () {
     Route::post('/profile/post', [ProfileController::class, 'store'])->name('profile.store');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
