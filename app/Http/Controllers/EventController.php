@@ -143,7 +143,7 @@ class EventController extends Controller
         $events = [];
 
         $events_akademik = Event::where('university_id', $detail_user)->where('kategori', 'Akademik')->get();
-        $events_non_akademik = Event::where('university_id', $detail_user)->where('kategori', 'Non Akademik')->get();
+        $events_non_akademik = Event::where('university_id', $detail_user)->where('kategori', 'nonakademik')->get();
 
         return view('eventPage.eventPage', ['events_akademik' => $events_akademik, 'events_non_akademik' => $events_non_akademik]);
 

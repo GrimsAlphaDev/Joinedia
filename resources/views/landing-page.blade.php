@@ -1,7 +1,7 @@
 <x-app-layout>
     {{-- Navbar --}}
     <div class="container-fluid">
-        <x-navbar-custom></x-navbar-custom>
+        {{-- <x-navbar-custom></x-navbar-custom> --}}
         {{-- Big Hero --}}
         <div class="container-fluid bg-white p-10 space-y-40 pt-32">
             <div class="grid grid-cols-2 items-center space-x-20">

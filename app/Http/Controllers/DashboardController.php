@@ -30,6 +30,7 @@ class DashboardController extends Controller
         $events = [];
          // get all event with university_id = detail_user university_id
         $events = Event::where('university_id', $detail_user)->get();
+        
         $detail_events = Event::where('id', $id)->first();
 
         return view('dashboardSelected', ['events' => $events, 'detail_events' => $detail_events], ['detail_event' => $detail_events]);
