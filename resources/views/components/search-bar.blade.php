@@ -3,7 +3,7 @@
 
     <div class="py-1">
         <div class="max-w-7xl mx-auto rounded-sm">
-            <div class="overflow-hidden shadow-sm sm:rounded-lg">
+            <div class="overflow-hidden sm:rounded-lg">
                 <div class=" text-gray-900">
                     <form action="">
                         <div class="flex justify-center">
