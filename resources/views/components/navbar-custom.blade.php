@@ -1,6 +1,6 @@
-<div class="w-full">
+<nav-x class="fixed w-full">
     <!-- Happiness is not something readymade. It comes from your own actions. - Dalai Lama -->
-    <div class="flex fixed justify-between px-5 py-1 items-center outline-1 outline-black border-2 w-full bg-white">
+    <div class="flex justify-between px-5 py-1 items-center outline-1 outline-black border-2 w-full bg-white">
         {{-- Logo Brand --}}
         <div class="text-start">
             <a href="{{ url('/dashboard') }}">
@@ -28,7 +28,7 @@
 
                     <!-- Dropdown menu -->
                     <div id="dropdownInformation"
-                        class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                        class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg w-44 dark:bg-gray-700 dark:divide-gray-600">
                         <div class="px-4 py-3 text-sm text-gray-900 dark:text-white">
                             <div>{{ Auth::user()->email }}</div>
                             <div class="font-medium truncate">{{ Auth::user()->name }}</div>
@@ -63,4 +63,4 @@
             @endif
         </div>
     </div>
-</div>
+</nav-x>

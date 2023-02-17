@@ -4,17 +4,18 @@
             {{ __('Dashboard') }}
         </h2>
     </x-slot>
-    <div class="max-w-7xl mx-auto rounded-sm h-screen container-fluid pt-20">
+    
+    <div class="max-w-7xl mx-auto rounded-sm h-screen container-fluid pt-16">
         <x-search-bar />
 
-        <div class="mt-5 overflow-hidden shadow-sm sm:rounded-lg inline-flex h-5/6 w-full">
+        <div class="overflow-hidden sm:rounded-lg inline-flex h-5/6 w-full">
             <aside id="default-sidebar"
-                class="top-0 left-0 z-40 w-2/5 h-screen transition-transform -translate-x-full sm:translate-x-0"
+                class="top-0 left-0 w-2/5 h-screen transition-transform -translate-x-full sm:translate-x-0"
                 aria-label="Sidebar">
                 <div class="h-full px-3 py-4 overflow-y-auto bg-gray-50 dark:bg-gray-800">
                     @for ($i = 0; $i < 5; $i++)
                         <a href="#"
-                            class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                            class="my-2 block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
                             <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">Noteworthy
                                 technology acquisitions 2021</h5>
                             <p class="font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise
