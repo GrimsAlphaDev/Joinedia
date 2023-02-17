@@ -10,7 +10,7 @@
         {{-- Nav link --}}
         <div class="text-center flex justify-between w-1/4 font-bold">
             <p><a href="dashboard" class='{{ Request::is('dashboard') ? 'text-blue-500' : '' }}'>Home</a></p>
-            <p><a href="event" class='{{ Request::is('event') ? 'text-blue-500' : '' }}'>Event</a></p>
+            <p><a href="{{ route('event') }}" class='{{ Request::is('event') ? 'text-blue-500' : '' }}'>Event</a></p>
             <p><a href="forum" class='{{ Request::is('forum') ? 'text-blue-500' : '' }}'>Forum</a></p>
             <p><a href="promotion" class='{{ Request::is('promotion') ? 'text-blue-500' : '' }}'>Promotion</a></p>
         </div>

@@ -7,6 +7,7 @@ use App\Models\DetailUser;
 use App\Models\University;
 use App\Http\Requests\StoreEventRequest;
 use App\Http\Requests\UpdateEventRequest;
+use Illuminate\Http\Request;
 
 class EventController extends Controller
 {
@@ -132,5 +133,19 @@ class EventController extends Controller
     public function destroy(Event $event)
     {
         //
+    }
+
+    public function event(Request $request){
+        
+        $user_id = auth()->user()->id;
+        $detail_user = DetailUser::where('user_id', $user_id)->first()->university_id;
+
+        $events = [];
+
+        $events_akademik = Event::where('university_id', $detail_user)->where('kategori', 'Akademik')->get();
+        $events_non_akademik = Event::where('university_id', $detail_user)->where('kategori', 'Non Akademik')->get();
+
+        return view('eventPage.eventPage', ['events_akademik' => $events_akademik, 'events_non_akademik' => $events_non_akademik]);
+
     }
 }

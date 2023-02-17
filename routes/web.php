@@ -28,10 +28,8 @@ Route::get('/', function () {
 Route::middleware(['auth', 'verified', 'profile'])->group(function () {
     Route::get('/addevent', [EventController::class, 'create'])->name('addevent.index');
     Route::post('/addevent', [EventController::class, 'store'])->name('addevent.store');
+    Route::get('/event', [EventController::class, 'event'])->name('event');
     Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');
-    Route::get('/event', function () {
-        return view('eventPage.eventPage');
-    })->name('event');
     Route::get('/dashboard/select/{id}',[DashboardController::class,'selectedEventDashboard'])->name('selected.event.dashboard');
 });
 
