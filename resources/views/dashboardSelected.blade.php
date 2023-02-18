@@ -5,7 +5,7 @@
         </h2>
     </x-slot>
 
-    <div class="max-w-7xl mx-auto rounded-sm h-screen container-fluid pt-16">
+    <div class="max-w-7xl mx-auto rounded-sm h-screen container-fluid">
         <x-search-bar />
 
         <div class="overflow-hidden sm:rounded-lg inline-flex h-5/6 w-full">
