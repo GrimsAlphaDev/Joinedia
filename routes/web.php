@@ -28,6 +28,10 @@ Route::get('/forum', function () {
     return view('forumPage.forumPage');
 });
 
+Route::get('/promotion', function () {
+    return view('promotion.promotionPage');
+});
+
 
 Route::middleware(['auth', 'verified', 'profile'])->group(function () {
     Route::get('/addevent', [EventController::class, 'create'])->name('addevent.index');
