@@ -34,28 +34,25 @@
                 {{-- Card --}}
                 <div class="max-w-sm rounded-lg overflow-hidden shadow-lg w-52 h-96 bg-white outline-black border-2">
                     <div class="px-6 py-4 h-full grid place-content-center">
-                        <p class="text-center font-bold text-xl mb-2">Nama Fitur</p>
+                        <p class="text-center font-bold text-xl mb-2">Real Time Chat</p>
                         <p class="text-center text-gray-700 text-base">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores
-                            et perferendis eaque, exercitationem praesentium nihil.
+                            Fitur Real Time Chat memungkinkan pengguna untuk berkomunikasi satu sama lain secara instan dan dalam waktu nyata, meningkatkan efisiensi dan komunikasi yang mulus.
                         </p>
                     </div>
                 </div>
                 <div class="max-w-sm rounded-lg overflow-hidden shadow-lg w-52 h-96 bg-white outline-black border-2">
                     <div class="px-6 py-4 h-full grid place-content-center">
-                        <p class="text-center font-bold text-xl mb-2">Nama Fitur</p>
+                        <p class="text-center font-bold text-xl mb-2">Event Management</p>
                         <p class="text-center text-gray-700 text-base">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores
-                            et perferendis eaque, exercitationem praesentium nihil.
+                            Fitur manajemen acara mempermudah proses perencanaan dan pelaksanaan acara dengan menyediakan berbagai alat untuk mengelola seluruh proses, dari awal hingga akhir. Baik untuk acara skala kecil atau besar
                         </p>
                     </div>
                 </div>
                 <div class="max-w-sm rounded-lg overflow-hidden shadow-lg w-52 h-96 bg-white outline-black border-2">
                     <div class="px-6 py-4 h-full grid place-content-center">
-                        <p class="text-center font-bold text-xl mb-2">Nama Fitur</p>
+                        <p class="text-center font-bold text-xl mb-2">Volunteer Management</p>
                         <p class="text-center text-gray-700 text-base">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores
-                            et perferendis eaque, exercitationem praesentium nihil.
+                            Fitur Manajemen Sukarelawan membantu organisasi dalam merekrut, melatih, dan mengelola sukarelawan.
                         </p>
                     </div>
                 </div>
@@ -158,14 +155,21 @@
                 <div class="grid place-content-between w-full space-y-10">
                     <div class="space-y-2">
                         <img src="assets/image/Logo Joinedia B&W.png" class="w-1/4" alt="">
-                        <p class="w-full">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus labore facere
-                            recusandae eum
-                            nesciunt soluta illo nobis et necessitatibus voluptatem.</p>
+                        <p class="w-full">Joinedia merupakan Platform Untuk Menghubungkan 
+                            Mahasiswa Dari Semua Angkatan Kampus,<br> Alumni & Dosen Prodi</p>
                     </div>
                     <p>© 2023 JOINEDIA. All Rights Reserved.</p>
                 </div>
                 <div class="flex justify-between w-full h-full">
                     <div class="grid place-content-between">
+                        <p class="hover:text-blue-600 font-bold">Link</p>
+                        <p class="hover:text-blue-600"><a href="{{ route('dashboard') }}">Home</a></p>
+                        <p class="hover:text-blue-600"><a href="{{ route('event') }}">Event</a></p>
+                        <p class="hover:text-blue-600"><a href="">Promotion</a></p>
+                        <p class="hover:text-blue-600"><a href="">Forum</a></p>
+                        <p class="hover:text-blue-600"><a href="">Support</a></p>
+                    </div>
+                    {{-- <div class="grid place-content-between">
                         <p class="hover:text-blue-600 font-bold">Link 1</p>
                         <p class="hover:text-blue-600"><a href="">Home</a></p>
                         <p class="hover:text-blue-600"><a href="">Event</a></p>
@@ -180,15 +184,7 @@
                         <p class="hover:text-blue-600"><a href="">Promotion</a></p>
                         <p class="hover:text-blue-600"><a href="">Forum</a></p>
                         <p class="hover:text-blue-600"><a href="">Support</a></p>
-                    </div>
-                    <div class="grid place-content-between">
-                        <p class="hover:text-blue-600 font-bold">Link 1</p>
-                        <p class="hover:text-blue-600"><a href="">Home</a></p>
-                        <p class="hover:text-blue-600"><a href="">Event</a></p>
-                        <p class="hover:text-blue-600"><a href="">Promotion</a></p>
-                        <p class="hover:text-blue-600"><a href="">Forum</a></p>
-                        <p class="hover:text-blue-600"><a href="">Support</a></p>
-                    </div>
+                    </div> --}}
 
                 </div>
             </div>

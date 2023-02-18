@@ -31,6 +31,7 @@ Route::middleware(['auth', 'verified', 'profile'])->group(function () {
     Route::get('/event', [EventController::class, 'event'])->name('event');
     Route::get('/dashboard',[DashboardController::class,'index'])->name('dashboard');
     Route::get('/dashboard/select/{id}',[DashboardController::class,'selectedEventDashboard'])->name('selected.event.dashboard');
+    Route::get('/feedback', [EventController::class, 'feedback'])->name('feedback');
 });
 
 Route::middleware('auth')->group(function () {

@@ -13,6 +13,7 @@
             <p><a href="{{ route('event') }}" class='{{ Request::is('event') ? 'text-blue-500' : '' }}'>Event</a></p>
             <p><a href="forum" class='{{ Request::is('forum') ? 'text-blue-500' : '' }}'>Forum</a></p>
             <p><a href="promotion" class='{{ Request::is('promotion') ? 'text-blue-500' : '' }}'>Promotion</a></p>
+            <p><a href="feedback" class='{{ Request::is('feedback') ? 'text-blue-500' : '' }}'>Feedback</a></p>
         </div>
         {{-- Button Sign Up/Login --}}
         <div class="text-end">

@@ -148,4 +148,8 @@ class EventController extends Controller
         return view('eventPage.eventPage', ['events_akademik' => $events_akademik, 'events_non_akademik' => $events_non_akademik]);
 
     }
+
+    public function feedback(){
+        return view('feedback');
+    }
 }
